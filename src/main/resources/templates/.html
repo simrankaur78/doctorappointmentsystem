@@ -1,0 +1,80 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>About profile</title>
+
+<!-- Font Icon -->
+<link rel="stylesheet"
+	href="../fonts/material-icon/css/material-design-iconic-font.min.css">
+
+<!-- Main css -->
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+	<div class="main">
+
+		<section class="signup">
+			<!--   <img src="../public/images/signup-bg.jpg" alt=""> -->
+					
+			<div class="container">
+				<div class="signup-content">
+					<form  id="signup-form" class="signup-form" action="editinfo" method="POST">
+					
+					   
+						<h2 class="form-title" style="text-align: center">About</h2>
+						<div class="form-group">
+						<label for="First Name" class="form-group">First Name</label>
+							<span th:text="${firstname}" class="form-input" id="firstname" ></span>
+							<input type="hidden" id="firstname1" name="firstname1" th:value="${firstname}" />
+						</div>
+						<div class="form-group">
+						<label for="Last Name" class="form-group">Last Name</label>
+							<span th:text="${lastname}" class="form-input" id="lastname"></span>
+							<input type="hidden" id="lastname1"  name="lastname1" th:value="${lastname}">
+						</div>
+						<div class="form-group">
+						<label for="Email" class="form-group">Email</label>
+						    <span th:text="${email}" class="form-input"></span>	
+						    <input type="hidden" id="email1" name="email1" th:value="${email}">						
+						</div>
+						
+						<div class="form-group">
+						<label for="Country code" class="form-group">Phone Number</label> 
+						<span th:text="${phone}" class="form-input"></span>		
+						<input type="hidden" id="phone1" name="phone1" th:value="${phone}">
+						</div>
+						<div class="form-group">
+						<label for="Phone" class="form-group">State</label>
+							<span th:text="${state}" class="form-input"></span>
+							<input type="hidden" id="state1" name="state1"  th:value="${state}">	
+						</div>
+						<div class="form-group">
+						<label for="Speciality" class="form-group">Speciality </label> 
+						<span th:text="${speciality}" class="form-input" id="speciality"></span>
+						<input type="hidden" id="speciality1"  name="speciality1" th:value="${speciality}">	
+						</div>
+						
+						<div class="form-group">
+							<input type="submit" name="submit" id="submit"
+								class="form-submit" value="Update" />
+						</div>
+						</form>
+				</div>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- JS -->
+	<script src="../vendor/jquery/jquery.min.js"></script>
+	<script src="../js/main.js"></script>
+	<script>
+	
+	</script>
+</body>
+<!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

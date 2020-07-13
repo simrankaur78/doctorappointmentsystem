@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Sign Up Form by Colorlib</title>
+
+<!-- Font Icon -->
+<link rel="stylesheet"
+	href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+<!-- Main css -->
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<div class="main">
+
+		<section class="signup">
+			<!-- <img src="images/signup-bg.jpg" alt=""> -->
+			<div class="container">
+				<div class="signup-content">
+					<form method="POST" id="signup-form" class="signup-form"
+						action="practitioners/registration" onsubmit="return matchpass()">
+						<h2 class="form-title">Create account</h2>
+						<div id=msg style="color:red align:center"></div>
+						<div class="form-group">
+						 <label for="First Name" class="form-group">First Name</label>
+							<input type="text" class="form-input" name="firstname"
+								id="firstname" placeholder="First Name" pattern ="^[A-Za-z]{2}[A-Za-z\s]*$" title="Enter valid first name containing only alphabets"required/>
+						</div>
+						<div class="form-group">
+						<label for="Last Name" class="form-group">Last Name</label>
+							<input type="text" class="form-input" name="lastname"
+								id="lastname" placeholder="Last Name" pattern ="^[A-Za-z]{2}[A-Za-z\s]*$" title="Enter valid last name containing only alphabets,',-"required />
+						</div> 
+						<div class="form-group">
+						<label for="Email" class="form-group">Email</label>
+							<input type="text" class="form-input" name="email" id="email"
+								placeholder="Email"  pattern="^\w+([\.-_]?\w+)*@\w+([\.-_]?\w+)*(\.\w{2,3})+$"title="Enter valid email address containing only alphanumerics  .  _  -  @"required/>
+						</div>
+						<div class="form-group">
+						<label for="Password" class="form-group">Password</label>
+							<input type="password" class="form-input" name="password"
+								id="password" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"/>
+								<img align="right" src="images/eyess.png" onmouseover="mouseoverPass();" onmouseout="mouseoutPass();"  height="20" width="20"/>
+						
+						</div>
+
+						<div class="form-group">
+						<label for="Confirm Password" class="form-group">Confirm Password</label>
+							<input type="password" class="form-input" name="re_password"
+								id="re_password" placeholder="Confirm Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"required/>
+						    
+						</div>
+						
+						<div class="form-group">
+						<label for="Phone" class="form-group">Phone</label>
+							<input type="text" class="form-input" name="phone" id="phone"
+								placeholder="Phone" pattern="^[6-9]{1}\d{9}$" title="Must contain valid 10 digit mobile number"required />
+						</div>
+						<div class="form-group">
+						<label for="Speciality" class="form-group">Speciality: </label> 
+						<select id="speciality" name="speciality" class="form-input" required>
+							<option disabled selected value> Select your speciality </option>
+							<option value="Plastic Surgery">Plastic Surgery</option>
+							<option value="Dermatology">Dermatology</option>
+							<option value="Cardiology">Cardiology</option>
+							<option value="Pathalogy">Pathalogy</option>
+							<option value="Nuerology">Nuerology</option>
+						</select>
+						</div>
+						<div class="form-group">
+						<label for="State" class="form-group" >State</label>
+							<input type="state" class="form-input" name="state" id="state"
+								placeholder="State" pattern ="^[A-Za-z]{2}[A-Za-z\s]*$" title="Enter a valid state containing only alphabets" required/>
+						</div>
+						<!-- <div class="form-group">
+							<input  type="checkbox"class="form-input" id="agree-term" name="agree-term" 
+								required /> <label for="agree-term"
+								class="form-input"><span><span></span></span>I
+								agree all statements in <a href="#" class="term-service">Terms
+									of service</a></label>
+						</div> -->
+						<div class="form-group">
+							<input type="submit" name="submit" id="submit"
+								class="form-submit" value="Sign up" />
+						</div>
+					</form>
+					<p class="loginhere">
+						Have already an account ? <a href="Login.html" class="loginhere-link">Login
+							here</a>
+					</p>
+				</div>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- JS -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="js/main.js"></script>
+	
+	<script>
+	
+     document.addEventListener("DOMContentLoaded", function(event) {
+        var url_string = window.location.href;
+	    var url = new URL(url_string);
+	    var msgvalue = url.searchParams.get("msg");
+	    //alert(paramValue)
+		document.getElementById("msg").innerHTML = msgvalue;
+		//var emailvalue = url.searchParams.get("email");
+	    //alert(paramValue)
+		//document.getElementById("email").value = emailvalue;
+  });
+     function mouseoverPass(obj) {
+		  var obj = document.getElementById('password');
+		  obj.type = "text";
+		}
+		function mouseoutPass(obj) {
+		  var obj = document.getElementById('password');
+		  obj.type = "password";
+		}
+     
+     function matchpass(){  
+    	 var firstpassword=document.getElementById("password").value;  
+    	 var secondpassword=document.getElementById("re_password").value;  
+    	   
+    	 if(firstpassword==secondpassword){  
+    	 return true;  
+    	 }  
+    	 else{  
+    	 alert("password must be same!");  
+    	 return false;  
+    	 }  
+    	 }  
+    
+</script>
+</body>
+<!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

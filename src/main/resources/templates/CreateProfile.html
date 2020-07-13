@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Sign Up Form by Colorlib</title>
+
+<!-- Font Icon -->
+<link rel="stylesheet"
+	href="../fonts/material-icon/css/material-design-iconic-font.min.css">
+
+<!-- Main css -->
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+	<div class="main">
+
+
+		<section class="signup">
+			<!-- <img src="images/signup-bg.jpg" alt=""> -->
+			<div class="container">
+				<div class="signup-content">
+				<p id="pageemail" ></p>
+					<form method="POST" id="signup-form" class="signup-form"
+						action="createprofile/profile">
+						<h2 class="form-title">Profile</h2>
+						<input type="text" name="profileemail" id="profileemail">
+						
+						<div class="form-group">
+							<label for="First Name" class="form-group">First Name</label> <input
+								type="text" class="form-input" name="firstname" id="firstname"
+								placeholder="First Name" />
+						</div>
+						<div class="form-group">
+							<label for="Last Name" class="form-group">Last Name</label> <input
+								type="lastname" class="form-input" name="lastname" id="lastname"
+								placeholder="Last Name" />
+						</div>
+
+
+						<div class="form-group">
+							<label for="Phone" class="form-group">Phone</label> <input
+								type="phone" class="form-input" name="phone" id="phone"
+								placeholder="Phone" />
+						</div>
+						<div class="form-group">
+							<label for="Speciality" class="form-group">Speciality </label> <select
+								id="speciality" name="speciality" class="form-input">
+								<option disabled selected value>Select your speciality
+								</option>
+								<option value="Plastic Surgery">Plastic Surgery</option>
+								<option value="Dermatology">Dermatology</option>
+								<option value="Cardiology">Cardiology</option>
+								<option value="Pathalogy">Pathalogy</option>
+								<option value="Nuerology">Nuerology</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="State" class="form-group">State</label> <input
+								type="state" class="form-input" name="state" id="state"
+								placeholder="State" />
+						</div>
+						<div class="form-group">
+							<input type="submit" name="submit" id="submit"
+								class="form-submit" value="Save" />
+						</div>
+					</form>
+
+
+
+
+
+
+					<!-- about -->
+
+
+
+					<form method="POST" id="signup-form" class="signup-form"
+						action="createprofile/about">
+						<h2 class="form-title">About</h2>
+
+						<div class="form-group">
+						<input type="text" name="aboutemail" id="aboutemail">
+							 <label
+								for="First Name" class="form-group">About</label>
+							<textarea id="about" name="about" rows="4" cols="100">
+                            </textarea>
+						</div>
+						<div class="form-group">
+							<input type="submit" name="submit" id="submit"
+								class="form-submit" value="Save" />
+						</div>
+					</form>
+
+
+
+					<!-- registration info -->
+
+
+					<form method="POST" id="signup-form" class="signup-form"
+						action="createprofile/medreg>
+						<h2 class="form-title">Medical Registration</h2>
+						<div class="form-group">
+							
+						</div>
+						<div class="form-group">
+							<input type="text" name="medregemail" id="medregemail">
+							<label	for="First Name" class="form-group">Registration ID</label> <input
+								type="text" class="form-input" name="regid" id="regid" />
+						</div>
+						<div class="form-group">
+							<label for="Last Name" class="form-group">Registration
+								Council</label> <input type="text" class="form-input" name="regcouncil"
+								id="regcouncil" />
+						</div>
+						<div class="form-group">
+							<label for="Email" class="form-group">Registration Year</label> <input
+								type="text" class="form-input" name="regyear" id="regyear" />
+						</div>
+
+
+						<div class="form-group">
+							<label for="Speciality" class="form-group"> Your Primary
+								Speciality</label> <select id="speciality" name="speciality"
+								class="form-input">
+								<option disabled selected value>Select your speciality
+								</option>
+								<option value="Plastic Surgery">Plastic Surgery</option>
+								<option value="Dermatology">Dermatology</option>
+								<option value="Cardiology">Cardiology</option>
+								<option value="Pathalogy">Pathalogy</option>
+								<option value="Nuerology">Nuerology</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<input type="submit" name="submit" id="submit"
+								class="form-submit" value="Save" />
+						</div>
+					</form>
+
+
+
+
+
+
+					<!-- skills -->
+
+
+
+
+					<form method="POST" id="signup-form" class="signup-form"
+						action="createprofile">
+						<h2 class="form-title">Skills</h2>
+
+						<div class="form-group">
+
+							<select id="cars" multiple>
+								<option value="Radiology">Radiology</option>
+								<option value="Research">Research</option>
+								<option value="Urology">Urology</option>
+								<option value="Psychiatry">Psychiatry</option>
+								<option value="Pathology">Pathology</option>
+								<option value="Child Nuerology">Child Nuerology</option>
+								<option value="allergy">allergy</option>
+								<option value="Family Medicine">Family Medicine</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<input type="submit" name="submit" id="submit"
+								class="form-submit" value="Save" />
+						</div>
+					</form>
+
+
+
+
+					<!-- education -->
+
+
+
+					<form method="POST" id="signup-form" class="signup-form"
+						action="createprofile">
+
+
+						<h2 class="form-title">Education</h2>
+
+						<div class="form-group">
+							<label for="First Name" class="form-group">University</label> <input
+								type="text" class="form-input" name="university" id="university"
+								placeholder="" />
+						</div>
+						<div class="form-group">
+							<label for="Last Name" class="form-group">Degree</label> <input
+								type="text" class="form-input" name="degree" id="degree"
+								placeholder="" />
+						</div>
+						<div class="form-group">
+							<label for="Email" class="form-group">Field of Study</label> <input
+								type="text" class="form-input" name="field" id="field"
+								placeholder="" />
+						</div>
+						<div class="form-group">
+							<label for="Password" class="form-group">Grade</label> <input
+								type="text" class="form-input" name="grade" id="grade"
+								placeholder="" />
+						</div>
+
+
+						<div class="form-group">
+							<label for="Speciality" class="form-group">Start Year </label> <select
+								id="startyear" name="startyear" class="form-input">
+								<option disabled selected value>Select</option>
+
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label for="Speciality" class="form-group">End Year </label> <select
+								id="endyear" name="endyear" class="form-input">
+								<option disabled selected value>Select</option>
+
+							</select>
+						</div>
+						<div class="form-group">
+							<input type="submit" name="submit" id="submit"
+								class="form-submit" value="Save" />
+						</div>
+						
+						
+						
+						
+						
+					</form>
+				</div>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- JS -->
+	<script src="../vendor/jquery/jquery.min.js"></script>
+	<script src="../js/main.js"></script>
+	<script>
+		window.onload = function() {
+			var select = document.getElementById("startyear");
+			for (var i = 1950; i <= new Date().getFullYear(); i++) {
+				var option = document.createElement('option');
+				option.text = option.value = i;
+				select.add(option, 0);
+			}
+			var select = document.getElementById("endyear");
+			for (var i = 1950; i <= new Date().getFullYear(); i++) {
+				var option = document.createElement('option');
+				option.text = option.value = i;
+				select.add(option, 0);
+			}
+
+			var url_string = window.location.href;
+			var url = new URL(url_string);
+			//var msgvalue = url.searchParams.get("email");
+			//alert(paramValue)
+			//document.getElementById("email").innerHTML = msgvalue;
+			var emailvalue = url.searchParams.get("email");
+			//alert(paramValue)
+			document.getElementById("profileemail").value = emailvalue;
+			document.getElementById("medregemail").value = emailvalue;
+			document.getElementById("aboutemail").value = emailvalue;
+			document.getElementById("pageemail").value = emailvalue;
+		};
+
+		//document.addEventListener("DOMContentLoaded", function(event) {
+		// var url_string = window.location.href;
+		//var url = new URL(url_string);
+		//var msgvalue = url.searchParams.get("email");
+		//alert(paramValue)
+		//document.getElementById("email").innerHTML = msgvalue;
+		//var emailvalue = url.searchParams.get("email");
+		//alert(paramValue)
+		//document.getElementById("pageemail").value = emailvalue;
+	</script>
+</body>
+<!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

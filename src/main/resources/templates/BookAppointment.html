@@ -1,0 +1,121 @@
+
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Sign Up Form by Colorlib</title>
+
+<!-- Font Icon -->
+<link rel="stylesheet"
+	href="../fonts/material-icon/css/material-design-iconic-font.min.css">
+
+<!-- Main css -->
+<link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+
+	<div class="main">
+
+		<section class="signup">
+			<!-- <img src="images/signup-bg.jpg" alt=""> -->
+			<div class="container">
+				<div class="signup-content">
+					<form method="POST" id="signup-form" class="signup-form"
+						action="/bookappointment">
+						<h2 class="form-title" style="color:indigo;bold">Book Appointment</h2>
+						<div class="form-group">
+						<div id="info">
+						<h3 style="color:indigo;bold">Dr.<span th:text="${name}" class="form-input"></span> </h3>
+						<h3 style="color:indigo;bold">Speciality:<span th:text="${speciality}" class="form-input"></span></h3>
+						<h3 style="color:indigo;bold">Doctors Timings:<span th:text="${starttime}" class="form-input"></span>
+						<span th:text="${endtime}" class="form-input"></span></h3>
+						<h3 style="color:indigo;bold">Consultation Fees:<span th:text="${charges}" class="form-input"></span></h3>
+						<h3 style="color:indigo;bold">OfficeAddress:<span th:text="${officeaddress}" class="form-input"></span></h3>
+						<h3 style="color:indigo;bold">OfficePhoneNo:<span th:text="${officephone}" class="form-input"></span></h3>
+						
+						</div>
+						</div>
+						<input type="hidden" class="form-input" th:value="${pid}" name="pid" id="pid" />
+						<div class="form-group">
+							<label for="State" class="form-group">Enter Name</label> <input
+								type="text" pattern="^[A-Za-z]{2}[A-Za-z\s]*$"
+								title="Name can only contains alphabets" class="form-input"
+								name="patientName" id="patientName" placeholder="Name" required />
+						</div>
+						<div class="form-group">
+							<label for="State" class="form-group">Enter Email</label> <input
+								type="text"
+								pattern="^\w+([\.-_]?\w+)*@\w+([\.-_]?\w+)*(\.\w{2,3})+$"
+								title="Enter valid email address containing only alphanumerics  .  _  -  @"
+								class="form-input" name="patientEmail" id="patientEmail" placeholder="Email"
+								required />
+
+						</div>
+						<div class="form-group">
+							<label for="State" class="form-group">Enter Mobile Number</label>
+							<input type="text" pattern="^[6-9]{1}\d{9}$"
+								title="Must contain valid 10 digit mobile number"
+								class="form-input" name="patientPhone" id="patientPhone"
+								placeholder="Mobile Number" required />
+
+						</div>
+
+						<div class="form-group">
+							<label for="State" class="form-group">Choose Date</label> <input
+								type="date" class="form-input" name="date" id="date" required />
+
+						</div>
+						
+
+						<div class="form-group">
+							<input type="submit" name="submit" id="submit"
+								class="form-submit" value="Book Appointment" />
+						</div>
+
+
+					</form>
+				</div>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- JS -->
+	<script src="../vendor/jquery/jquery.min.js"></script>
+	<script src="../js/main.js"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function(event) {
+			var todaysDate = new Date(); // Gets today's date
+
+			var year = todaysDate.getFullYear(); // YYYY
+
+			var month = ("0" + (todaysDate.getMonth() + 1)).slice(-2); // MM
+
+			var day = ("0" + todaysDate.getDate()).slice(-2); // DD
+
+			var minDate = (year + "-" + month + "-" + day); // Results in "YYYY-MM-DD" for today's date 
+			//$('date').attr('min',minDate);
+			document.getElementById("date").setAttribute("min", minDate);
+
+			//for removing certain days
+			const picker = document.getElementById('date');
+			picker.addEventListener('input', function(e) {
+				var day = new Date(this.value).getUTCDay();
+				if (day === 0) {
+					e.preventDefault();
+					this.value = '';
+					alert("Sorry Doctor dont attend patients on Sunday");
+				}
+			});
+		});
+		var s=[[${status}]];
+		if(s==true){alert("Appointment Booked")}
+		if(s==false){alert("Sorry there is no empty slot !!!!Go for another date")}
+	</script>
+</body>
+<!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

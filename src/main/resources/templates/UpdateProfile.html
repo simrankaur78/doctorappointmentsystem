@@ -1,0 +1,362 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>About profile</title>
+
+<!-- Font Icon -->
+<link rel="stylesheet"
+	href="../fonts/material-icon/css/material-design-iconic-font.min.css">
+
+<!-- Main css -->
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.dropbtn {
+	background-color: #4CAF50;
+	color: white;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+	background-color: #3e8e41;
+}
+
+/* The search field */
+#myInput {
+	box-sizing: border-box;
+	background-image: url('searchicon.png');
+	background-position: 14px 12px;
+	background-repeat: no-repeat;
+	font-size: 16px;
+	padding: 14px 20px 12px 45px;
+	border: none;
+	border-bottom: 1px solid #ddd;
+}
+
+/* The search field when it gets focus/clicked on */
+#myInput:focus {
+	outline: 3px solid #ddd;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f6f6f6;
+	min-width: 230px;
+	border: 1px solid #ddd;
+	z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+	background-color: #f1f1f1
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+	display: block;
+}
+</style>
+</head>
+<body>
+	<div class="main">
+
+		<section class="signup">
+			<!-- <img src="images/signup-bg.jpg" alt=""> -->
+			<div class="container">
+				<div class="signup-content">
+
+
+
+
+
+					<form id="signup-form" class="signup-form" action="updateprofile"
+						method="POST">
+						<h2 class="form-title">Update Profile</h2>
+						<h3 class="form-title">Profile</h3>
+						<div class="form-group">
+							<input type="hidden" id="p_id" name="p_id" th:value="${pid}"
+								placeholder="pid" class="form-input" />
+						</div>
+						<div class="form-group">
+							<label for="First Name" class="form-group">First Name</label> <input
+								type="text" id="firstname" name="firstname"
+								th:value="${firstname}" placeholder="First Name"
+								class="form-input" required/>
+						</div>
+						<div class="form-group">
+							<label for="Last Name" class="form-group">Last Name</label> <input
+								type="text" id="lastname" name="lastname" th:value="${lastname}"
+								placeholder="Last Name" class="form-input" required/>
+						</div>
+						<div class="form-group">
+							<label for="Email" class="form-group">Email</label> <input
+								type="email" id="email" name="email" th:value="${email}"
+								placeholder="Email" class="form-input" readonly />
+						</div>
+
+
+						<div class="form-group">
+							<label for="Phone" class="form-group">Phone</label> <input
+								type="text" id="phone" name="phone" th:value="${phone}"
+								class="form-input" placeholder="Phone" required />
+						</div>
+						<div class="form-group">
+							<label for="Speciality" class="form-group">Speciality </label> <input
+								type="text" id="speciality" name="speciality"
+								th:value="${speciality}" class="form-input"
+								placeholder="Speciality" required/>
+						</div>
+						<div class="form-group">
+							<label for="State" class="form-group">State</label> <input
+								class="form-input" type="text" name="state" id="state"
+								placeholder="State" th:value="${state}" required/>
+						</div>
+
+
+						<div class="form-group">
+							<input type="submit" name="submit" id="submit"
+								class="form-submit" value="Update" />
+						</div>
+
+					</form>
+
+
+
+
+					<!-- about -->
+
+					<form method="POST" id="about-form" class="signup-form"
+						action="updateprofile">
+						<h3 class="form-title">About</h3>
+						<div class="form-group">
+							<input type="hidden" id="p_id2" name="p_id" th:value="${pid}"
+								placeholder="pid" class="form-input" />
+						</div>
+						<div class="form-group">
+							<label for="State" class="form-group">About</label> <input
+								type="text" class="form-input" name="about" id="about"
+								placeholder="about" th:value="${about}" required />
+						</div>
+						<div class="form-group">
+							<input type="submit" name="submit" id="submit"
+								class="form-submit" value="Update" />
+						</div>
+
+					</form>
+
+
+					<!-- registration details -->
+
+
+
+					<form method="POST" id="reg-form" class="signup-form"
+						action="updateprofile">
+						<h3 class="form-title">Registration Details</h3>
+						<div class="form-group">
+							<input type="hidden" id="p_id2" name="p_id" th:value="${pid}"
+								placeholder="pid" class="form-input" />
+						</div>
+						<div class="form-group">
+							<label for="State" class="form-group">Registration ID</label> <input
+								type="state" class="form-input" name="registrationId"
+								id="registrationId" placeholder="registration id"
+								th:value="${regid}" required/>
+						</div>
+
+						<div class="form-group">
+							<label for="State" class="form-group">Registration
+								Council</label> <input type="state" class="form-input"
+								name="registrationCouncil" id="registrationCouncil"
+								placeholder="registration council" th:value="${regcouncil}" required/>
+						</div>
+
+						<div class="form-group">
+							<label for="State" class="form-group">Registration Year</label> <input
+								type="state" class="form-input" name="registrationYear"
+								id="registrationYear" placeholder="registration Year"
+								th:value="${regyear}" required	/>
+						</div>
+
+
+						<div class="form-group">
+							<input type="submit" name="submit" id="submit"
+								class="form-submit" value="Update" />
+						</div>
+
+
+					</form>
+
+
+
+					<!-- Doctor Appointment Booking and Timings -->
+
+					<h3 class="form-title">Office Address and Timings</h3>
+					<form method="POST" id="reg-form" class="signup-form"
+						action="updateschedule">
+						<div class="form-group">
+							<input type="hidden" id="p_id4" name="pid" th:value="${pid}"
+								placeholder="pid" class="form-input" />
+						</div>
+						<div class="form-group">
+							<label for="State" class="form-group">Office Address</label> <input
+								type="text" class="form-input" name="officeaddress"
+								id="officeaddress" placeholder="Office Address"
+								th:value="${officeaddress}" required />
+						</div>
+						<div class="form-group">
+							<label for="State" class="form-group">Office PhoneNo</label> <input
+								type="text" class="form-input" name="officephone"
+								id="officephone" placeholder="Office PhoneNo"
+								th:value="${officephone}" required />
+						</div>
+						<div class="form-group">
+							<label for="State" class="form-group">StartTime</label> <input
+								type="time" class="form-input" name="starttime" id="starttime"
+								placeholder="Start time" th:value="${starttime}" required />
+						</div>
+						<div class="form-group">
+							<label for="State" class="form-group">End Time</label> <input
+								type="time" class="form-input" name="endtime" id="endtime"
+								placeholder="Office PhoneNo" th:value="${endtime}" required />
+						</div>
+						<div class="form-group">
+							<label for="State" class="form-group">Charges</label> <input
+								type="text" class="form-input" name="charges" id="charges"
+								placeholder="Doctor Charges" th:value="${charges}" required />
+						</div>
+
+						<div class="form-group">
+							<label for="State" class="form-group">Duration for each
+								Patient</label> <input type="time" class="form-input" name="duration"
+								id="duration" placeholder="Time alloted for single Patient"
+								th:value="${duration}" required />
+						</div>
+						<div class="form-group">
+							<input type="submit" name="submit" id="submit"
+								class="form-submit" value="Update" />
+						</div>
+						
+					</form>
+
+
+
+					<!-- skills -->
+					<form method="POST" id="reg-form" class="signup-form"
+						action="updateskills">
+						<h3 class="form-title">Skills</h3>
+						<div class="form-group">
+							<input type="hidden" id="p_id3" name="p_id" th:value="${pid}"
+								placeholder="pid" class="form-input" />
+						</div>
+						<div class="form-group">
+							<!-- <multi-input> <input list="skills" class="form-input"  name="skills" > 
+						<datalist id="skills" onblur="searchFlights()">
+ -->
+							<select id="skills" multiple="multiple" name="skills"
+								class="form-input" th:value="${skills}" required>
+								<option value="Immunology">Immunology</option>
+								<option value="Anesthesiology">Anesthesiology</option>
+								<option value="Cardiology">Cardiology</option>
+								<option value="Rectal Surgery">Rectal Surgery</option>
+								<option value="Nuerology">Nuerology</option>
+								<option value="Endocronology">Endocronology</option>
+								<option value="Gynacology">Gynacology</option>
+							</select>
+							<!-- </datalist> -->
+							<!--  </multi-input> -->
+
+							<div class="form-group">
+								<input type="submit" name="submit" id="submit"
+									class="form-submit" value="Update" />
+							</div>
+						</div>
+					</form>
+
+
+					<!-- education info -->
+					<form method="POST" id="signup-form" class="signup-form"
+						action="practititioner/updateeducation">
+						<div class="form-group">
+							<input type="hidden" id="p_id4" name="p_id" th:value="${pid}"
+								placeholder="pid" class="form-input" />
+						</div>
+						<div id="education">
+							<h1>Education</h1>
+						</div>
+						<input id="addedu" type="button" value="Add Education"
+							onclick="create();" />
+
+						<div class="form-group">
+							<input type="submit" name="submit" id="submit"
+								class="form-submit" value="Update" />
+						</div>
+
+					</form>
+
+
+				</div>
+			</div>
+		</section>
+
+	</div>
+
+
+	<!-- JS -->
+	<script src="../vendor/jquery/jquery.min.js"></script>
+	<script src="../js/main.js"></script>
+	<script src="../js/multi-input.js"></script>
+	<!-- <script>
+		function updateskills() {
+			var select1 = document.getElementById("skills");
+			var selected1 = [];
+			for (var i = 0; i < select1.length; i++) {
+				if (select1.options[i].selected)
+					selected1.push(select1.options[i].value);
+			}
+			document.getElementById("options").value = selected1;
+		}
+	</script> -->
+	<script>
+		var count = 1;
+		function create() {
+			var para = document.createElement("div");
+
+			para.innerHTML = "<h3>Education details</h3><label  class='form-group'>University</label> <input type='text' class='form-input name='university"+count+"' id='university"+count+"' placeholder='Enter University' /><label for='Last Name' class='form-group'>Degree</label> <input type='text' class='form-input' name='degree"+count+"' id='degree"+count+"' placeholder='Enter Degree' /><label class='form-group'>Field of Study</label> <input type='text' class='form-input' name='field"+count+"' id='field"+count+"' placeholder='Enter Field Of Study' /><label class='form-group'>Score</label> <input type='text' class='form-input' name='grade"+count+"' id='grade"+count+"' placeholder='Enter Percentage or CGPA' /><label  class='form-group'>Start Year </label>  <input type='text' class='form-input name='startyear"+count+"' id='startyear"+count+"' placeholder='Enter Startyear' /><label  class='form-group'>End Year </label>  <input type='text' class='form-input name='endyear"+count+"' id='endyear"+count+"' placeholder='Enter Endyear' />";
+			document.getElementById("education").appendChild(para);
+			count++;
+			if (count > 4) {
+				document.getElementById("addedu").style.display = 'none';
+			}
+		}
+		create();
+		var p_id = document.getElementById('p_id');
+		document.getElementById("p_id").style.display = 'none';
+		//document.getElementById('prac_profile').action = 'updateprofile?pid=
+	</script>
+</body>
+<!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
+

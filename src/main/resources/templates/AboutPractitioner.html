@@ -1,0 +1,220 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>About profile</title>
+
+<!-- Font Icon -->
+<link rel="stylesheet"
+	href="../fonts/material-icon/css/material-design-iconic-font.min.css">
+
+<!-- Main css -->
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+	<div class="main">
+
+		<section class="signup">
+			<!--   <img src="../public/images/signup-bg.jpg" alt=""> -->
+					
+			<div class="container">
+				<div class="signup-content">
+				
+					<form  id="signup-form" class="signup-form" action="update" method="POST">
+					
+					
+					
+					<input type="hidden" id="pid" name="pid" th:value="${pid}" />
+					
+					   
+						<h2 class="form-title" style="text-align: center">Personal Information</h2>
+						<div class="form-group">
+						<label for="First Name" class="form-group">First Name</label>
+							<span th:text="${firstname}" class="form-input" id="firstname1" ></span>
+							<input type="hidden" id="firstname" name="firstname" th:value="${firstname}" />
+						</div>
+						<div class="form-group">
+						<label for="Last Name" class="form-group">Last Name</label>
+							<span th:text="${lastname}" class="form-input" id="lastname1"></span>
+							<input type="hidden" id="lastname"  name="lastname" th:value="${lastname}">
+						</div>
+						<div class="form-group">
+						<label for="Email" class="form-group">Email</label>
+						    <span th:text="${email}" class="form-input"></span>	
+						    <input type="hidden" id="email" name="email" th:value="${email}">						
+						</div>
+						
+						<div class="form-group">
+						<label for="Country code" class="form-group">Phone Number</label> 
+						<span th:text="${phone}" class="form-input" id="phone1"></span>		
+						<input type="hidden" id="phone" name="phone" th:value="${phone}">
+						</div>
+						<div class="form-group">
+						<label for="Phone" class="form-group">State</label>
+							<span th:text="${state}" class="form-input" id="state1"></span>
+							<input type="hidden" id="state" name="state"  th:value="${state}">	
+						</div>
+						<div class="form-group">
+						<label for="Speciality" class="form-group">Speciality </label> 
+						<span th:text="${speciality}" class="form-input" id="speciality1"></span>
+						<input type="hidden" id="speciality"  name="speciality" th:value="${speciality}">	
+						</div>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						<!-- about -->
+						
+						<h2 class="form-title" style="text-align: center">About</h2>
+						
+						<div class="form-group">
+						<label for="About" class="form-group">About </label> 
+						<span th:text="${about}" class="form-input" id="about"></span>
+						<input type="hidden" id="about"  name="about" th:value="${about}">	
+						</div>
+						
+						
+						<!-- Medical registration info -->
+						<h2 class="form-title" style="text-align: center">Registration Details</h2>
+						
+						<div class="form-group">
+						<label for="About" class="form-group">RegistrationID </label> 
+						<span th:text="${regid}" class="form-input" id="regid"></span>
+						<input type="hidden" id="regid"  name="regid" th:value="${regid}">	
+						</div>
+						
+						<div class="form-group">
+						<label for="About" class="form-group">RegistrationCouncil </label> 
+						<span th:text="${regcouncil}" class="form-input" id="regcouncil"></span>
+						<input type="hidden" id="regcouncil"  name="regcouncil" th:value="${regcouncil}">	
+						</div>
+						
+						<div class="form-group">
+						<label for="About" class="form-group">RegistrationYear </label> 
+						<span th:text="${regyear}" class="form-input" id="regyear"></span>
+						<input type="hidden" id="regyear"  name="regyear" th:value="${regyear}">	
+						</div>
+						
+						
+						
+						<!-- schedule -->
+						<h2 class="form-title" style="text-align: center">Office Address and Timings</h2>
+						
+						<div class="form-group">
+						<label for="About" class="form-group">Office Address </label> 
+						<span th:text="${officeaddress}" class="form-input" id="officeaddress"></span>
+						<input type="hidden" id="officeaddress"  name="officeaddress" th:value="${officeaddress}">	
+						</div>
+						
+						<div class="form-group">
+						<label for="About" class="form-group">Office Phone </label> 
+						<span th:text="${officephone}" class="form-input" id="officephone"></span>
+						<input type="hidden" id="officephone"  name="officephone" th:value="${officephone}">	
+						</div>
+						
+						<div class="form-group">
+						<label for="About" class="form-group">Start Time </label> 
+						<span th:text="${starttime}" class="form-input" id="starttime"></span>
+						<input type="hidden" id="starttme"  name="starttime" th:value="${starttime}">	
+						</div>
+						<div class="form-group">
+						<label for="About" class="form-group">End Time </label> 
+						<span th:text="${endtime}" class="form-input" id="endtime"></span>
+						<input type="hidden" id="endtime"  name="endtime" th:value="${endtime}">	
+						</div>
+						
+						<div class="form-group">
+						<label for="About" class="form-group">Charges </label> 
+						<span th:text="${charges}" class="form-input" id="charges"></span>
+						<input type="hidden" id="charges"  name="charges" th:value="${charges}">	
+						</div>
+						
+						<div class="form-group">
+						<label for="About" class="form-group">Duration</label> 
+						<span th:text="${duration}" class="form-input" id="duration"></span>
+						<input type="hidden" id="duration"  name="duration" th:value="${duration}">	
+						</div>
+						
+						<!-- skills -->
+						<h2 class="form-title">Skills</h2>
+						<div class="form-group">
+						<input type="text" id="skills"  class="form-input" name="skills" th:value="${skills}" readonly>	
+						</div>
+						
+						<!-- education details -->
+
+                        <h2 class="form-title">Education</h2>
+
+						<div class="form-group">
+						<label for="About" class="form-group">University </label> 
+							<span th:text="${university}" class="form-input" id="university"></span>
+						<input type="hidden" id="university"  name="university" th:value="${university}">	
+						
+						</div>
+						<div class="form-group">
+						<label for="About" class="form-group">Degree </label> 
+							<span th:text="${degree}" class="form-input" id="degree"></span>
+						<input type="hidden" id="degree"  name="degree" th:value="${degree}">	
+						
+						</div>
+						<div class="form-group">
+						<label for="About" class="form-group">Field Of Study </label> 
+							<span th:text="${field}" class="form-input" id="field"></span>
+						<input type="hidden" id="field"  name="field" th:value="${field}">	
+						
+
+						</div>
+						<div class="form-group">
+						<label for="About" class="form-group">Grade </label> 
+							<span th:text="${grade}" class="form-input" id="grade"></span>
+						<input type="hidden" id="grade"  name="grade" th:value="${grade}">	
+						
+						</div>
+
+
+						<div class="form-group">
+						<label for="About" class="form-group">Start Year </label> 
+							<span th:text="${startyear}" class="form-input" id="startyear"></span>
+						<input type="hidden" id="startyear"  name="startyear" th:value="${startyear}">	
+						
+						</div>
+
+						<div class="form-group">
+						<label for="About" class="form-group">End Year </label> 
+							<span th:text="${endyear}" class="form-input" id="endyear"></span>
+						<input type="hidden" id="endyear"  name="endyear" th:value="${endyear}">	
+						
+						</div>
+						
+												
+						<div class="form-group">
+							<input type="submit" name="submit" id="submit"
+								class="form-submit" value="Update Profile" />
+						</div>
+						</form>
+				</div>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- JS -->
+	<script src="../vendor/jquery/jquery.min.js"></script>
+	<script src="../js/main.js"></script>
+	<script>
+	
+	</script>
+</body>
+<!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

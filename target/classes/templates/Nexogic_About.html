@@ -1,0 +1,77 @@
+
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Nexogic Healthcare</title>
+
+<!-- Font Icon -->
+<link rel="stylesheet"
+	href="../fonts/material-icon/css/material-design-iconic-font.min.css">
+
+<!-- Main css -->
+<link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+	<div  style="background-image: url('bgdoctor.jpeg');">
+
+		<section class="signup">
+			<!-- <img src="images/signup-bg.jpg" alt=""> -->
+			<!-- <div  style="align:right;color:white;"><h2><a href="#">Practitioner Login</a></h2></div>
+			<div style="align:right;color:white;"><h2><a href="#">Practitioner Register</a></h2></div> -->
+			<div class="container">
+				<div class="signup-content">
+					<form method="POST" id="reg-form" class="signup-form"
+						action="/practitioners/appointment">
+						<div class="form-group">
+                              <h1>Best Professional Healthcare Network</h1>
+							<select id="list" name="list" class="form-input" required>
+								<option disabled selected value>Select a Practitioner</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<input type="submit" name="submit" id="submit"
+								class="form-submit" value="Book Appointment" />
+						</div>
+					</form>
+				</div>
+			</div>
+			</section>
+	</div>
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="js/main.js"></script>
+
+	<script th:inline="javascript">
+	 var no=[[${count}]];
+	 var i;
+	 var sel = document.getElementById('list');
+
+	 for (i = 0; i < no; i++) {
+		var name="";
+		 
+		 if(i==0){name=[[${p0}]];}
+		 else if(i==1){name=[[${p1}]];}
+		 else if(i==2){name=[[${p2}]];}
+		 else if(i==3){name=[[${p3}]];}
+		 else if(i==4){name=[[${p4}]];}
+		 else if(i==5){name=[[${p5}]];}
+		 else if(i==6){name=[[${p6}]];}
+		 else if(i==7){name=[[${p7}]];}
+		 else if(i==8){name=[[${p8}]];}
+		 else if(i==9){name=[[${p9}]];}
+		 else if(i==10){name=[[${p10}]];}
+		 else{}
+		 var opt = document.createElement('option');
+			opt.appendChild( document.createTextNode(name));
+			opt.value = name; 
+            sel.appendChild(opt); 
+		}
+
+	 </script>
+</body>
+<!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

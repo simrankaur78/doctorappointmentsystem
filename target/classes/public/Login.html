@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Sign Up Form by Colorlib</title>
+
+<!-- Font Icon -->
+<link rel="stylesheet"
+	href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+<!-- Main css -->
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<div class="main">
+
+		<section class="signup">
+			<!-- <img src="images/signup-bg.jpg" alt=""> -->
+			<div class="container">
+				<div class="signup-content">
+					<form method="POST" id="signup-form" name="login-form"
+						class="signup-form" action="practitioners/login">
+						<h2 class="form-title">Login here</h2>
+						<div id="msg" style="color: red; text-align: center"></div>
+						<div class="form-group">
+							<label for="State" class="form-group">Enter email</label> <input
+								type="email" class="form-input" name="email" id="email"
+								placeholder="email"
+								pattern="^\w+([\.-_]?\w+)*@\w+([\.-_]?\w+)*(\.\w{2,3})+$"
+								title="Enter valid email address containing only alphanumerics  .  _  -  @"
+								required />
+						</div>
+						<div class="form-group">
+							<label for="State" class="form-group">Enter password</label> <input
+								type="password" class="form-input" name="password" id="password"
+								placeholder="password" required /> <img align="right"
+								src="images/eyess.png" onmouseover="mouseoverPass();"
+								onmouseout="mouseoutPass();" height="20" width="20" />
+						</div>
+
+						<!-- <div class="form-group">
+
+							<input type="checkbox" class="form-input" name="show" id="show"
+								onclick="myFunction()" /> <label for="State" class="form-group">Show
+								Password</label>
+						</div> -->
+
+						<!-- <input  type="checkbox" id="show" name="show" 
+								required /> <label for="show"
+								class="form-input"><span><span></span></span>Show Password</label>
+						 -->
+						<div class="form-group">
+							<input type="submit" name="submit" id="submit"
+								class="form-submit" value="Login" />
+
+						</div>
+						<div id="msg"></div>
+
+					</form>
+					<form onclick="emailfilled();" method="get">
+						<div class="form group">
+							<input type="submit" class="form-submit" value="Forgot Password" />
+
+						</div>
+
+					</form>
+
+				</div>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- JS -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="js/main.js"></script>
+	<script>
+		function mouseoverPass(obj) {
+			var obj = document.getElementById('password');
+			obj.type = "text";
+		}
+		function mouseoutPass(obj) {
+			var obj = document.getElementById('password');
+			obj.type = "password";
+		}
+		function emailfilled() {
+			
+			var x = document.forms["login-form"]["email"].value;
+			
+			if (x == "") {
+				alert("Email must be filled out");
+				return false;
+			}
+			else {
+				
+				alert("Link to reset password is sent to your email");
+				return true;
+				}
+			}
+		
+		
+	</script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function(event) {
+			var url_string = window.location.href;
+			var url = new URL(url_string);
+			var msgvalue = url.searchParams.get("msg");
+			//alert(paramValue)
+			document.getElementById("msg").innerHTML = msgvalue;
+			//var emailvalue = url.searchParams.get("email");
+			//alert(paramValue)
+			//document.getElementById("email").value = emailvalue;
+
+		});
+	</script>
+</body>
+<!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
